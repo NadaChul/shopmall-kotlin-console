@@ -30,12 +30,14 @@ class ShoppingCategory  : Screen() {
         */
 
         if (selectedCategory == "#") {
+            // 장바구니 이동
             val shoppingCart = ShoppingCart()
             shoppingCart.showCartItems()
         } else {
             if (categories.contains(selectedCategory)) {
-                val shoppingProductList = ShoppingProductList()
-                shoppingProductList.showProducts(selectedCategory)
+                // 카테고리 상품 목록 보여주기
+                val shoppingProductList = ShoppingProductList(selectedCategory)
+                shoppingProductList.showProducts()
             } else {
                 showErrorMessage(selectedCategory)
             }
